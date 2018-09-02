@@ -3,7 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass
+  if len(recipe.keys()) > len(ingredients.keys()):
+    return 0
+  else:
+    arr = []
+    for key in recipe:
+      arr.append(ingredients[key]/recipe[key])
+
+  return int(min(arr))
+  
+  
 
 
 if __name__ == '__main__':
