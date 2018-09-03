@@ -2,9 +2,20 @@
 
 import sys
 
-def climbing_stairs(n):
-  pass
+def climbing_stairs(n, ranOnce = False):
+    if ranOnce == False:
+      n += 1
+      ranOnce = True
 
+    if n <= 2:
+      if n <= 0:
+        return 0
+      else:
+        return 1
+      
+    return (climbing_stairs(n - 1, ranOnce) + 
+    climbing_stairs(n - 2, ranOnce) + 
+    climbing_stairs(n - 3, ranOnce))
 
 if __name__ == "__main__":
   # Test out your implementation from the command line
