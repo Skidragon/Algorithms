@@ -2,20 +2,20 @@
 
 import sys
 
-def climbing_stairs(n, ranOnce = False):
-    if ranOnce == False:
-      n += 1
-      ranOnce = True
-
+def climbing_stairs(n):
+  n += 1
+  def fib(n):
     if n <= 2:
       if n <= 0:
         return 0
       else:
         return 1
-      
-    return (climbing_stairs(n - 1, ranOnce) + 
-    climbing_stairs(n - 2, ranOnce) + 
-    climbing_stairs(n - 3, ranOnce))
+    
+    return (fib(n - 1) +
+    fib(n - 2) + 
+    fib(n - 3))
+  
+  return fib(n)
 
 if __name__ == "__main__":
   # Test out your implementation from the command line
