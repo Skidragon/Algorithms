@@ -2,18 +2,22 @@
 
 import sys
 
-def climbing_stairs(n):
+def climbing_stairs(n, arr=None):
   n += 1
+  cache = {}
   def fib(n):
     if n <= 2:
       if n <= 0:
         return 0
       else:
         return 1
+    elif n in cache:
+      return cache[n]
     
-    return (fib(n - 1) +
+    cache[n] = (fib(n - 1) +
     fib(n - 2) + 
     fib(n - 3))
+    return cache[n]
   
   return fib(n)
 
